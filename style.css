@@ -115,7 +115,7 @@ li
 .list-command {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-left: 20px;
     padding-right: 20px;
     max-width: 760px;
@@ -161,14 +161,20 @@ li
     border-radius: 15%;
     margin-bottom: 20px;
     transition: transform var(--animation-duration) var(--timing-function);
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.55);
+    /* box-shadow: 0 5px 5px rgba(0, 0, 0, 0.55); */
+    box-shadow: 0px 0px 10px 10px rgba(34, 60, 80, 0.5);
+    transition: all 0.25s ease-in-out;
   }
 
   .command-item__img:hover {
     border: solid;
     border-color: #FF6B01;
-    /* transform: scale(1.1) translate(0%, 5%); */
+    /* transform: scale(1.1) translate(0%, -5%); */
+    transform: scale(1.02);
   }
+
+
+  
 
   .command-item__about {
     text-align: center;
@@ -181,4 +187,5 @@ li
     display: block;
     color: #FF6B01;
     font-size: 16px;
+    padding-bottom: 40px;
    }
