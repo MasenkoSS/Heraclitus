@@ -1,0 +1,138 @@
+ul {
+    list-style: none;
+  }
+
+:root {
+    --animation-timing-function: steps(5, end);
+    --animation-duration: 120ms;
+  }
+
+.command {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: auto;
+    transition: opacity var(--animation-duration) var(--timing-function);
+    z-index: 999;
+  }
+
+  .command.is-open {
+    opacity: 1;
+    pointer-events: initial;
+  }
+
+  .overlay__command {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .content__command {
+    margin: 0 auto;
+    position: relative;
+    padding: 100px;
+    border: solid;
+    border-color: #FF6B01;
+    background-color: #FFFFFF;
+    max-width: 760px;
+    top: 3%;
+    transition: transform var(--animation-duration) var(--timing-function);
+  }
+  
+  @media screen and (max-width: 1023px) {
+    .content__command {
+      max-width: 680px;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .content__command {
+      max-width: 320px;
+    }
+  }
+
+  .button-close__command {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    color: #fff;
+    outline: none;
+    border-radius: 50%;
+    transition: background-color var(--animation-duration) var(--timing-function) transform 0.5s var(--timing-function);
+    background-image: url('./images/cancel.png');
+    background-position: center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: none;
+  }
+
+  .list-command {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 0px;
+    max-width: 760px;
+
+  }
+
+  .item-command {
+    width: auto;
+    margin-bottom: 0px;
+  }
+/*   
+  @media screen and (max-width: 1023px) {
+    .item-command {
+      width: 150px;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .item-command {
+      width: 130px;
+    }
+  } */
+
+  .command-item__link {
+    display: block;
+  }
+
+  .command-item__img {
+    border-radius: 5%;
+    margin-bottom: 20px;
+    transition: transform var(--animation-duration) var(--timing-function);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.55);
+  }
+
+  .command-item__img:hover {
+    border: solid;
+    border-color: #FF6B01;
+    transform: scale(1.2) translate(0%, 10%);
+  }
+
+  .command-item__about {
+    text-align: center;
+    /* margin-bottom: 5px; */
+    color: #000000;
+    font-weight: bold;
+  }
+
+  .command-item__name {
+    display: block;
+    color: #FF6B01;
+   }
