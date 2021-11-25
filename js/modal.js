@@ -11,4 +11,18 @@
     function toggleModal() {
       refs.modal.classList.toggle('is-hidden');
     }
+
+    window.addEventListener('keydown', closeModalEsc);
+
+    function closeModalEsc(e) {
+      e.preventDefault();
+      if (e.code === 'Escape') {
+        modalContent.close();
+  
+        window.removeEventListener('keydown', closeModalEsc);
+      }
+    }
+
+
+
   })();
